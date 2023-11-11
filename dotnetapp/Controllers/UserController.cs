@@ -6,7 +6,7 @@ using dotnetapp.Models;
 
 namespace dotnetapp.Controllers
 {
-    
+    [ApiController]
 
     public class UserController : ControllerBase
     {
@@ -28,8 +28,10 @@ namespace dotnetapp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(){
-
+        public IActionResult Create(Player p){
+            context.Players.Add(p);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
         
     }
