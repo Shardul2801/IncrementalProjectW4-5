@@ -7,6 +7,7 @@ using dotnetapp.Models;
 namespace dotnetapp.Controllers
 {
     [ApiController]
+    [Route("api/[controller]")]
 
     public class UserController : ControllerBase
     {
@@ -17,7 +18,8 @@ namespace dotnetapp.Controllers
             context = _context;
         }
 
-
+        [HttpGet]
+        [Route("ShowPlayers")]
         public IActionResult Index(){
             var data = context.Players.ToList();
             return View(data);        
