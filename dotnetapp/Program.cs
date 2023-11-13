@@ -13,6 +13,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var connectionString = builder.Configuration.GetConnectionString("myconn");
+
+builder.Services.AddDbContext<ApplicationDbContext>(OptionsBuilderConfigurationExtensions=>OptionsBuilderConfigurationExtensions.UseSqlServer(connectionString));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

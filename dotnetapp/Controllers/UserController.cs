@@ -19,21 +19,10 @@ namespace dotnetapp.Controllers
         }
 
         [HttpGet]
-        [Route("ShowPlayers")]
-        public IActionResult Index(){
-            var data = context.Players.ToList();
-            return View(data);        
-        }
+        [Route("GetMovies")]
 
-        public IActionResult Create(){
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Create(Player p){
-            context.Players.Add(p);
-            context.SaveChanges();
-            return RedirectToAction("Index");
+        public IActionGetPlayers (){
+            var data
         }
         
     }
