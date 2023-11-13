@@ -57,7 +57,7 @@ namespace dotnetapp.Controllers
         [Route("EditPlayer/{id}")]
 
         public IActionResult PutPlayer(int id, Player P){
-            Player EditP = context.Players.Find(P.Id);
+            Player EditP = context.Players.Find(id);
             EditP.Name = P.Name;
             EditP.Age = P.Age;
             EditP.Category = P.Category;
@@ -66,6 +66,15 @@ namespace dotnetapp.Controllers
             context.SaveChanges();
             return Ok();
 
+        }
+
+        [HttpDelete]
+        [Route("DeletePlayer/{id}")]
+
+        public IActionResult DeletePlayer(int id){
+            Player P = context.Players.Find(id);
+            context.Remove(P);
+            context.SaveChanges();
         }
         
     }
