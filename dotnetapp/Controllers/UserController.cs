@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using dotnetapp.Models;
 
 namespace dotnetapp.Controllers
@@ -19,10 +20,29 @@ namespace dotnetapp.Controllers
         }
 
         [HttpGet]
-        [Route("GetMovies")]
+        [Route("GetPlayers")]
 
-        public IActionGetPlayers (){
-            var data
+        public IActionResult GetPlayers(){
+            var data = context.Players.ToList();
+            return Ok(data);
+        }
+
+        [HttpPost]
+        [Route("AddPlayer")]
+        public IActionResult PostPlayer(Player P){
+            context.Players.Add(P);
+            context.SaveChanges();
+            return Created("Record Added", P);
+        }
+
+
+        [HttpPost]
+        [Route("AddTeam")]
+
+        public IActionResult PostTeam(Team T){
+            context.Teams.Add(T);
+            context.SaveChanges();
+            return Created("Record Added", T);
         }
         
     }
