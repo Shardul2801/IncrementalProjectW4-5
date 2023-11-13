@@ -44,6 +44,29 @@ namespace dotnetapp.Controllers
             context.SaveChanges();
             return Created("Record Added", T);
         }
+
+        [HttpGet]
+        [Route("GetTeams")]
+
+        public IActionResult GetTeams(){
+            var data = context.Teams.ToList();
+            return Ok(data);
+        }
+
+        [HttpPut]
+        [Route("EditPlayer/{id}")]
+
+        public IActionResult PutPlayer(int id, Player P){
+            Player EditP = context.Players.Find(P.Id);
+            EditP.Name = P.Name;
+            EditP.Age = P.Age;
+            EditP.Category = P.Category;
+            EditP.BiddingPrice =P.BiddingPrice;
+            EditP.TeamId = P.TeamId;
+            context.SaveChanges();
+            return Ok();
+
+        }
         
     }
 }
