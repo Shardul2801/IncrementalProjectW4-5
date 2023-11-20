@@ -68,6 +68,7 @@ namespace dotnetapp.Controllers{
         [Route("EditPlayer/{id}")]
 
         public IActionResult PutPlayer(int id, Player P){
+            try{
             if(ModelState.IsValid)
             {
             Player EditP = context.Players.Find(id);
@@ -79,6 +80,8 @@ namespace dotnetapp.Controllers{
             context.SaveChanges();
             return Ok();
             }
+            }
+            catch(Exception e){}
             return BadRequest("Unable to edit player.");
         }
 
