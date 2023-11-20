@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Player } from 'src/models/player.model';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Team } from 'src/models/team.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,10 @@ export class AdminService {
   }
 
   getTeams():Observable<Team[]>{
-    return this.httpclient.get<Team[]>(this.url'/)
+    return this.httpclient.get<Team[]>(this.url+'/GetTeams')
+  }
+
+  createTeam(newTeam:Team):Observable<Team>{
+    return this.httpclient.post<Team>(this.url + '/AddTeam',newTeam,this.httpOptions)
   }
 }

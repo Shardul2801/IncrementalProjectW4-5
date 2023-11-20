@@ -11,7 +11,7 @@ import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
 })
 export class AddPlayersComponent implements OnInit {
 
-  playerdata:Player={id:0,name:"",age:0,teamId:0,category:"",biddingPrice:0}
+  playerdata:Player={id:0,name:"",age:0,category:"",biddingPrice:0}
   playerform :FormGroup;
   constructor(private playerservice:PlayerService,private router:Router) { 
     this.playerform = new FormGroup ({
