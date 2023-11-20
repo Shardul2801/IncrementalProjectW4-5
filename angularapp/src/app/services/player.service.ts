@@ -18,7 +18,7 @@ export class PlayerService {
   httpOptions={headers:new HttpHeaders({'content-type':'application/json'})}
 
   addPlayer(player:Player):Observable<Player>{
-    return this.httpclient.post<Player>('this.url'+'/AddPlayer',player,this.httpOptions)
+    return this.httpclient.post<Player>(this.url+'/AddPlayer',player,this.httpOptions)
   }
   
 }

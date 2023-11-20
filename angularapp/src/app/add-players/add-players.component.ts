@@ -12,10 +12,20 @@ import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
 export class AddPlayersComponent implements OnInit {
 
   playerdata:Player={id:0,name:"",age:0,teamId:0,category:"",biddingPrice:0}
+  playerform :FormGroup;
+  constructor(private playerservice:PlayerService,private router:Router) { 
+    this.playerform = new FormGroup ({
+      name: new FormControl('',[Validators.required]),
+      age: new FormControl('',[Validators.required]),
+      category: new FormControl('',[Validators.required]),
+      teamId: new FormControl('',[Validators.required]),
+      biddingPrice: new FormControl('',[Validators.required]),
 
-  constructor(private playerservice:PlayerService,private router:Router) { }
+    })
+  }
 
-  playerform = 
+  
+
 
 
 
