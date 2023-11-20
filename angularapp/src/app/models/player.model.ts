@@ -1,7 +1,7 @@
 export class Player {
     name: string
     age: number
-    teamID: number
+    teamId: number
     category: string
     biddingPrice: number
 }
