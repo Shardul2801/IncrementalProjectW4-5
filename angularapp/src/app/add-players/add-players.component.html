@@ -2,7 +2,32 @@
     <form [formGroup] = "playerform" (ngSubmit)="onSave()" >
         <div>
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" formControlName="name">
+            <input type="text" id="name" name="name" formControlName="name" class="form-control">
         </div>
+
+        <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" formControlName="age" class="form-control">
+        </div>
+
+        <div>
+            <label for="teamId">TeamID</label>
+            <input type="number" id="teamId" name="teamId" formControlName="teamId" class="form-control">
+        </div>
+
+        <div>
+            <label for="category">Category</label>
+            <input type="text" id="category" name="category" formControlName="category"  class="form-control">
+        </div>
+
+        <div>
+            <label for="biddingPrice">Bidding Price</label>
+            <input type="number" id="biddingPrice" name="biddingPrice" formControlName="biddingPrice" class="form-control">
+        </div>
+
+        <p>
+            <button type="submit" (click)="onSave(playerform)"  class="btn btn-success">Save</button>
+        </p>
+
     </form>
 </div>
