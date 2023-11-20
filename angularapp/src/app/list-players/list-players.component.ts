@@ -9,7 +9,7 @@ import { PlayerService } from '../services/player.service';
 })
 export class ListPlayersComponent implements OnInit {
 
-  playerdata:Player[]=[]
+  players:Player[]=[]
 
   constructor(private playerservice:PlayerService) {
     
@@ -17,12 +17,12 @@ export class ListPlayersComponent implements OnInit {
 
   
   ngOnInit(): void {
-   this.playerservice.getPlayers().subscribe((data)=>{this.playerdata.push(...data)})
+   this.playerservice.getPlayers().subscribe((data)=>{this.players.push(...data)})
     
   }
 
   onDisplay():void{
-    console.log(this.playerdata);
+    console.log(this.players);
   }
 
 }

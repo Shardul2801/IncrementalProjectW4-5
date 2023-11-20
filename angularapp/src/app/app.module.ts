@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AddTeamComponent } from './add-team/add-team.component';
 import { HomeComponent } from './home/home.component';
 import { PlayerComponent } from './player/player.component';
+import { ListTeamComponent } from './list-team/list-team.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PlayerComponent } from './player/player.component';
     AddPlayersComponent,
     AddTeamComponent,
     HomeComponent,
-    PlayerComponent
+    PlayerComponent,
+    ListTeamComponent
   ],
   imports: [
     BrowserModule,
