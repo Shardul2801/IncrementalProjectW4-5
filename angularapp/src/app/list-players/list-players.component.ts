@@ -21,7 +21,7 @@ export class ListPlayersComponent implements OnInit {
     
   }
 
-  onDisplay(){
+  onDisplay():void{
     console.log(this.playerdata);
   }
 

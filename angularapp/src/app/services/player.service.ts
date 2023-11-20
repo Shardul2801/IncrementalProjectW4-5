@@ -12,6 +12,6 @@ export class PlayerService {
   playerdata:Player[]
   constructor(private httpclient:HttpClient) { }
   getPlayers():Observable<Player[]>{
-   return this.httpclient.get<Player[]>( `${this.url}/GetPlayers`)
+   return this.httpclient.get<Player[]>(this.url + '/GetPlayers')
   }
 }
