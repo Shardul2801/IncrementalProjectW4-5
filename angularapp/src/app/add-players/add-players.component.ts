@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from '../models/player.model';
+import { Player } from '../../models/player.model';
 import { PlayerService } from '../services/player.service';
 import { Router } from '@angular/router';
 import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
