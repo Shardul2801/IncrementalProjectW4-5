@@ -1,0 +1,23 @@
+<div>
+    <table>
+        <thead>
+            <th>Player ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Category</th>
+            <th>Bidding Price</th>
+        </thead>
+        <tbody>
+            <ul *ngFor="let p of players">
+                <li>{{p.id}}</li>
+                <li>{{p.name}}</li>
+                <li>{{p.age}}</li>
+                <li>{{p.category}}</li>
+                <li>{{p.biddingprice}}</li>
+                <li><button type="submit">edit</button></li>
+                <li><button type="submit">delete</button></li>
+
+            </ul>
+        </tbody>
+    </table>
+</div>

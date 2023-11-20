@@ -10,6 +10,7 @@ public class Team{
     public int Id{get;set;}
     public string TeamName{get;set;}
 
+    public int maximum
     public ICollection<Player> ?Players{get;set;}
 }
 
