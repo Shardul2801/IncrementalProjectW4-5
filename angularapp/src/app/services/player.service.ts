@@ -9,15 +9,16 @@ import { Observable } from 'rxjs';
 })
 export class PlayerService {
   private url= "https://8080-abdddcaefddefefacbbecabcdadeafbbdcaeafe.premiumproject.examly.io/Admin"
-  playerdata:Player[]
-  player:Player
+  
   constructor(private httpclient:HttpClient) { }
   getPlayers():Observable<Player[]>{
    return this.httpclient.get<Player[]>(this.url + '/GetPlayers')
   }
 
+  httpOptions={headers:new HttpHeaders({'content-type':'application/json'})}
+
   addPlayer(player:Player):Observable<Player>{
-    return this.httpclient.
+    return this.httpclient.post<Player>('this.url'+'/AddPlayer',player,this.httpOptions)
   }
   
 }

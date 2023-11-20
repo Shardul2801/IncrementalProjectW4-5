@@ -1,1 +1,8 @@
-<p>add-players works!</p>
+<div>
+    <form [formGroup] = "playerform" (ngSubmit)="onSave()" >
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" formControlName="name">
+        </div>
+    </form>
+</div>
