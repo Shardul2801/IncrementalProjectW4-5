@@ -40,9 +40,19 @@ namespace dotnetapp.Controllers
         [Route("AddTeam")]
 
         public IActionResult PostTeam(Team T){
-            context.Teams.Add(T);
-            context.SaveChanges();
+            if(ModelState.IsValid){
+                try{
+                    context.Teams.Add(T);
+                    context.SaveChanges();
+                    
+                }
+                catch(Exception ex){
+                    return BadRequest(ex.InnerException.Message);
+                }
+            }
             return Created("Record Added", T);
+            
+           
         }
 
         [HttpGet]
@@ -75,6 +85,17 @@ namespace dotnetapp.Controllers
             Player P = context.Players.Find(id);
             context.Remove(P);
             context.SaveChanges();
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("DeleteTeam/{id}")]
+
+        public IActionResult DeleteTeam(int id){
+            Team T = context.Teams.Find(id);
+            context.Teams.Remove(T);
+            context.SaveChanges();
+            return Ok();
         }
         
     }
