@@ -11,7 +11,7 @@ import { Validators } from '@angular/forms';
 })
 export class AddTeamComponent implements OnInit {
 
-  newTeam :Team={ id:0,name:"",maximumBudget:0}
+  newTeam :{id:number,name:string,maximumBudget:number}
   teamform:FormGroup
   constructor(private adminservice:AdminService) { 
 
