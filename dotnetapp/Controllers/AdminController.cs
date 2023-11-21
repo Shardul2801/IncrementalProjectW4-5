@@ -64,6 +64,18 @@ namespace dotnetapp.Controllers{
             return Ok(data);
         }
 
+        [HttpGet]
+        [Route("GetPlayer/{id}")]
+
+        public IActionResult GetPlayer(int id){
+            var data = context.Players.Find(id);
+            return Ok(data);
+        }
+
+
+
+
+
         [HttpPut]
         [Route("EditPlayer/{id}")]
 

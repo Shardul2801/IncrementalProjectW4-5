@@ -16,6 +16,10 @@ export class AdminService {
    return this.httpclient.get<Player[]>(this.url + '/GetPlayers')
   }
 
+  getPlayer(id:number):Observable<Player>{
+    return this.httpclient.get<Player>(this.url + '/GetPlayer/' + id);
+  }
+
   httpOptions={headers:new HttpHeaders({'content-type':'application/json'})}
 
   addPlayer(player:Player):Observable<Player>{
@@ -30,5 +34,7 @@ export class AdminService {
     return this.httpclient.post<Team>(this.url + '/AddTeam',newTeam,this.httpOptions)
   }
 
-  
+  editPlayer(player:Player):Observable<Player>{
+    return this.httpclient.put<Player>(this.url + '/EditPlayer/',player,this.httpOptions);
+  }
 }
