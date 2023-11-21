@@ -5,13 +5,15 @@ import { AddPlayersComponent } from './add-players/add-players.component';
 import { HomeComponent } from './home/home.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { ListPlayersComponent } from './list-players/list-players.component';
+import { DeletePlayerComponent } from './delete-player/delete-player.component';
 
 const routes: Routes = [
   {path:"home",component:HomeComponent},
   {path:"addteam",component:AddTeamComponent},
   {path:"addplayer",component:AddPlayersComponent},
   {path:"editplayer/:id",component:EditPlayerComponent},
-  {path:"listplayer",component:ListPlayersComponent}
+  {path:"listplayer",component:ListPlayersComponent},
+  {path:"delete/:id", component:DeletePlayerComponent}
 
 ];
 

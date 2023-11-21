@@ -39,6 +39,6 @@ export class AdminService {
   }
 
   deletePlayer(id:number):Observable<Player>{
-    return this.httpclient.delete<Player>(this.url + '/DeletePlayer' + id);
+    return this.httpclient.delete<Player>(this.url + '/DeletePlayer/' + id);
   }
 }

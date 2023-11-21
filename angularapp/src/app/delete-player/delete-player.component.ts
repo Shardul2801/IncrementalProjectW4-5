@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/models/player.model';
 import { AdminService } from '../services/admin.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-delete-player',
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DeletePlayerComponent implements OnInit {
   id:number
   playerdata:{id:number,name:string,age:number,category:string,biddingPrice:number}
-  constructor(private adminservice:AdminService, private ar:ActivatedRoute) { }
+  constructor(private adminservice:AdminService, private ar:ActivatedRoute, private router:Router) { }
 
   getPlayer(id:number){
     this.adminservice.getPlayer(id).subscribe((data)=>{
@@ -19,10 +19,11 @@ export class DeletePlayerComponent implements OnInit {
     })
   }
 
-  onSave() {
+  onDelete() {
     // this.playerdata
     this.adminservice.deletePlayer(this.id).subscribe(()=>{
       alert("Record Deleted Successfully!")
+      this.router.navigate(['/listplayer'])
     })
   }
 
