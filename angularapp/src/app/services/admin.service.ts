@@ -29,4 +29,6 @@ export class AdminService {
   createTeam(newTeam:Team):Observable<Team>{
     return this.httpclient.post<Team>(this.url + '/AddTeam',newTeam,this.httpOptions)
   }
+
+  
 }
