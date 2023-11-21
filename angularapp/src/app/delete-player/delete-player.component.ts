@@ -11,11 +11,18 @@ import { ActivatedRoute } from '@angular/router';
 export class DeletePlayerComponent implements OnInit {
   id:number
   playerdata:Player
-  constructor(private playerservice:PlayerService, private ar:ActivatedRoute) { }
+  constructor(private adminservice:AdminService, private ar:ActivatedRoute) { }
 
   getPlayer(id:number){
-    this.playerservice.getPlayer(id).subscribe((data)=>{
+    this.adminservice.getPlayer(id).subscribe((data)=>{
       this.playerdata = data;
+    })
+  }
+
+  onSave() {
+    // this.playerdata
+    this.adminservice.deletePlayer(this.id).subscribe(()=>{
+      alert("Record Deleted Successfully!")
     })
   }
 
