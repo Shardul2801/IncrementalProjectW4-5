@@ -12,6 +12,7 @@ import { PlayerComponent } from './player/player.component';
 import { ListTeamComponent } from './list-team/list-team.component';
 import { EditPlayerComponent } from './edit-player/edit-player.component';
 import { FormsModule } from '@angular/forms';
+import { DeletePlayerComponent } from './delete-player/delete-player.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     PlayerComponent,
     ListTeamComponent,
-    EditPlayerComponent
+    EditPlayerComponent,
+    DeletePlayerComponent
   ],
   imports: [
     BrowserModule,
