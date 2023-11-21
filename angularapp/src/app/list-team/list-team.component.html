@@ -1,1 +1,16 @@
-<p>list-team works!</p>
+<div>
+    <table class="table">
+        <thead>
+            <th>Team ID</th>
+            <th>Name</th>
+            <th>Maximum Price</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of teams">
+                <td>{{t.id}}</td>
+                <td>{{t.teamName}}</td>
+                <td>{{t.maximumBudget}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -11,7 +11,7 @@ import { Validators } from '@angular/forms';
 })
 export class AddTeamComponent implements OnInit {
 
-  teamData :Team={ id:0,name:"",maximumBudget:0}
+  newTeam :Team={ id:0,name:"",maximumBudget:0}
   teamform:FormGroup
   constructor(private adminservice:AdminService) { 
 
@@ -22,10 +22,10 @@ export class AddTeamComponent implements OnInit {
   }
 
   onSave(){
-    this.teamData = this.teamform.value
-    this.adminservice.createTeam(this.teamData).subscribe(()=>{
+    this.newTeam = this.teamform.value
+    this.adminservice.createTeam(this.newTeam).subscribe(()=>{
       alert("Team Added Successfully")
-      console.log(this.teamData);
+      console.log(this.newTeam);
     })
   }
 
