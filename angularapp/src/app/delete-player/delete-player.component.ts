@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DeletePlayerComponent implements OnInit {
   id:number
-  playerdata:Player
+  playerdata:{id:number,name:string,age:number,category:string,biddingPrice:number}
   constructor(private adminservice:AdminService, private ar:ActivatedRoute) { }
 
   getPlayer(id:number){
