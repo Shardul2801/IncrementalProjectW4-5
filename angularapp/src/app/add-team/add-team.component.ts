@@ -16,7 +16,7 @@ export class AddTeamComponent implements OnInit {
   constructor(private adminservice:AdminService) { 
 
   this.teamform = new FormGroup({
-    name: new FormControl('',[Validators.required]),
+    teamName: new FormControl('',[Validators.required]),
     maximumBudget: new FormControl('',[Validators.required])
   })
   }
